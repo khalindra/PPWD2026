@@ -1,111 +1,126 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Khalindra</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Khalindra Maulita Syafitri</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <div class="portfolio">
+  <header class="header">
+    <img src="imup.jpeg" alt="Foto Khalindra Maulita Syafitri" class="foto-profil">
+    <h1>Khalindra Maulita Syafitri</h1>
+    <p>Mahasiswi Sistem Informasi Universitas Tanjungpura</p>
+  </header>
 
-        <!-- FOTO -->
-        <div class="foto">
-            <img src="foto.png" alt="Foto Profil">
-        </div>
+  <nav class="nav">
+    <a href="#tentang">Tentang</a>
+    <a href="#hobi">Hobi</a>
+    <a href="#jadwal">Jadwal</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
 
-        <!-- BAGIAN TENGAH -->
-        <div class="tengah">
+  <main class="konten">
+    <section id="tentang">
+      <h2>Tentang Saya</h2>
+      <p>Halo! Saya Khalindra, mahasiswa yang sedang belajar membuat web dengan HTML dan CSS. Saya sangat suka traveling, tetapi saya tidak suka pergi sendirian.Warna favorit saya navy,hitam,coklat,abu-abu. Makanan favorit saya Mie Ayam,Sate,Nasi Goreng.</p>
+      <p>Cita-cita saya ingin menjadi CEO.</p>
+    </section>
 
-            <section class="hello">
-                <h1>Hello!</h1>
+    <section id="hobi">
+      <h2>Daftar Hobi</h2>
+      <ul class="list-hobi">
+        <li>Traveling kemanapun</li>
+        <li>Belanja</li>
+        <li>Main Volly & Badminton</li>
+        <li>Mendengarkan musik kalo kesepian</li>
+      </ul>
+    </section>
 
-                <p>
-                    Selamat datang di portfolio saya. 
-                    Saya adalah mahasiswa yang sedang belajar 
-                    pemrograman web dan teknologi informasi.
-                </p>
+<section id="jadwal">
+      <h2>Jadwal Pelajaran</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Hari</th>
+            <th>Mata Pelajaran</th>
+            <th>Jam</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="3">Senin</td>
+            <td>Pemrograman Web Dasar</td>
+            <td>08.20 – 10.00</td>
+          </tr>
+          <tr>
+            <td>Basis Data</td>
+            <td>10.20 – 12.50</td>
+          </tr>
+          <tr>
+            <td>Kewarganegaraan</td>
+            <td>13.30 – 15.10</td>
+          </tr>
+          <tr>
+            <td rowspan="2">Selasa</td>
+            <td>Praktikum Pemrograman Web Dasar</td>
+            <td>10.20 – 13.10</td>
+          </tr>
+          <tr>
+            <td>Manajemen Proyek SI</td>
+            <td>13.30 – 15.10</td>
+          <tr>
+            <td rowspan="2">Rabu</td>
+            <td>Aplikasi Multimedia</td>
+            <td>07.30 – 10.00</td>
+          </tr>
+          <tr>
+            <td>Rekayasa Perangkat Lunak</td>
+            <td>10.20 – 12.50</td>
+          </tr>
+          <tr>
+            <td rowspan="2">Kamis</td>
+            <td>Pemrograman Berorientasi Objek</td>
+            <td>10.20 – 12.00</td>
+          </tr>
+          <tr>
+            <td>Kewirausahaan Teknologi Informasi</td>
+            <td>13.30 – 15.10</td>
+          </tr>
+          <tr>
+            <td rowspan="2">Jumat</td>
+            <td>Manajemen Rantai Pasok</td>
+            <td>07.30 – 10.00</td>
+          </tr>
+          <tr>
+            <td>Praktikum Pemrograman Berorientasi Objek</td>
+            <td>13.30 – 16.20</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
-                <p>
-                    Hope you enjoy my portfolio!
-                </p>
-            </section>
+    <section id="kontak">
+      <h2>Formulir Kontak</h2>
+      <form>
+        <label for="nama">Nama</label>
+        <input type="text" id="nama" placeholder="Tulis nama Anda">
 
-            <section class="education">
-                <h2>Education</h2>
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="nama@email.com">
 
-                <h4>Universitas Tanjungpura</h4>
-                <b>2024 – 2028</b>
+        <label for="pesan">Pesan</label>
+        <textarea id="pesan" rows="4" placeholder="Tulis pesan..."></textarea>
 
-                <p>
-                    Program Studi Sistem Informasi
-                </p>
-            </section>
+        <button type="submit">Kirim Pesan</button>
+      </form>
+    </section>
+  </main>
 
-        </div>
-
-        <!-- BAGIAN KANAN -->
-        <div class="kanan">
-
-            <section class="skills">
-                <h2>Skills</h2>
-
-                <div class="skill-box">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-            </section>
-
-            <section class="experience">
-                <h2>Experience</h2>
-
-                <h4>2024 – 2025</h4>
-                <p>
-                    Belajar dan mengembangkan kemampuan 
-                    dalam bidang pemrograman dan teknologi informasi.
-                </p>
-
-                <h4>2025 – Present</h4>
-                <p>
-                    Mengembangkan berbagai tugas dan project 
-                    website menggunakan HTML, CSS, dan PHP.
-                </p>
-            </section>
-
-        </div>
-
-        <!-- KONTAK -->
-        <div class="kontak">
-
-            <div>
-                <span>☎</span>
-                <p>123-456-789</p>
-            </div>
-
-            <div>
-                <span>@</span>
-                <p>123@gmail.com</p>
-            </div>
-
-            <div>
-                <span>☎</span>
-                <p>123-456-789</p>
-            </div>
-
-            <div>
-                <span>☎</span>
-                <p>123-456-789</p>
-            </div>
-
-        </div>
-
-    </div>
+  <footer class="footer">
+    <p>&copy; 2026 Khalindra Maulita Syafitri. Dibuat dengan HTML &amp; CSS.</p>
+  </footer>
 
 </body>
 </html>
