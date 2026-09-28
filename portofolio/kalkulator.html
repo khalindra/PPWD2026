@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kalkulator Sederhana</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #f0f8ff;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            min-height: 100vh;
+        }
+
+        .kalkulator {
+            width: 350px;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        #layar {
+            width: 100%;
+            height: 70px;
+
+            padding: 10px;
+            margin-bottom: 15px;
+
+            font-size: 30px;
+            text-align: right;
+
+            border: 2px solid #ddd;
+            border-radius: 10px;
+
+            background: #f8f9fa;
+        }
+
+        .tombol {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        button {
+            height: 60px;
+
+            border: none;
+            border-radius: 10px;
+
+            font-size: 20px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            background: #3498db;
+            color: white;
+        }
+
+        button:hover {
+            background: #2980b9;
+        }
+
+        .operator {
+            background: #f39c12;
+        }
+
+        .operator:hover {
+            background: #d68910;
+        }
+
+        .hapus {
+            background: #e74c3c;
+        }
+
+        .hapus:hover {
+            background: #c0392b;
+        }
+
+        .sama-dengan {
+            background: #27ae60;
+        }
+
+        .sama-dengan:hover {
+            background: #219150;
+        }
+
+        .nol {
+            grid-column: span 2;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="kalkulator">
+
+        <h2>🧮 Kalkulator</h2>
+
+        <input type="text" id="layar" value="0" readonly>
+
+        <div class="tombol">
+
+            <button class="hapus" onclick="hapusSemua()">C</button>
+
+            <button class="hapus" onclick="hapusSatu()">⌫</button>
+
+            <button class="operator" onclick="masukkanOperator('%')">%</button>
+
+            <button class="operator" onclick="masukkanOperator('/')">÷</button>
+
+            <button onclick="masukkanAngka('7')">7</button>
+            <button onclick="masukkanAngka('8')">8</button>
+            <button onclick="masukkanAngka('9')">9</button>
+
+            <button class="operator" onclick="masukkanOperator('*')">×</button>
+
+            <button onclick="masukkanAngka('4')">4</button>
+            <button onclick="masukkanAngka('5')">5</button>
+            <button onclick="masukkanAngka('6')">6</button>
+
+            <button class="operator" onclick="masukkanOperator('-')">−</button>
+
+            <button onclick="masukkanAngka('1')">1</button>
+            <button onclick="masukkanAngka('2')">2</button>
+            <button onclick="masukkanAngka('3')">3</button>
+
+            <button class="operator" onclick="masukkanOperator('+')">+</button>
+
+            <button class="nol" onclick="masukkanAngka('0')">0</button>
+
+            <button onclick="masukkanAngka('.')">.</button>
+
+            <button class="sama-dengan" onclick="hitung()">=</button>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        const layar = document.getElementById("layar");
+
+
+        function masukkanAngka(angka) {
+
+            if (layar.value === "Error") {
+                layar.value = angka;
+                return;
+            }
+
+            if (angka === "." &&
+                layar.value.split(/[+\-*/%]/).pop().includes(".")) {
+                return;
+            }
+
+            if (layar.value === "0" && angka !== ".") {
+                layar.value = angka;
+            } else {
+                layar.value += angka;
+            }
+        }
+
+
+        function masukkanOperator(operator) {
+
+            if (layar.value === "Error") {
+                layar.value = "0";
+            }
+
+            let terakhir = layar.value.slice(-1);
+
+            if (["+", "-", "*", "/", "%"].includes(terakhir)) {
+                layar.value = layar.value.slice(0, -1);
+            }
+
+            layar.value += operator;
+        }
+
+
+        function hitung() {
+
+            try {
+
+                let ekspresi = layar.value;
+
+                let hasil = eval(ekspresi);
+
+                layar.value = hasil;
+
+            } catch (error) {
+
+                layar.value = "Error";
+
+            }
+        }
+
+
+        function hapusSemua() {
+
+            layar.value = "0";
+
+        }
+
+
+        function hapusSatu() {
+
+            if (layar.value === "Error") {
+                layar.value = "0";
+                return;
+            }
+
+            if (layar.value.length > 1) {
+
+                layar.value = layar.value.slice(0, -1);
+
+            } else {
+
+                layar.value = "0";
+
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
