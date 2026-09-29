@@ -1,126 +1,82 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profil Khalindra Maulita Syafitri</title>
-  <link rel="stylesheet" href="style.css">
+    <title>Warna Acak</title>
+    <style>
+        body {
+            font-family: Times New Roman;
+            text-align: center;
+        }
+
+        #warna_nim {
+            width: 250px;
+            height: 150px;
+            margin: 20px auto;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
 </head>
+
 <body>
 
-  <header class="header">
-    <img src="maniz.jpeg" alt="Foto Khalindra Maulita Syafitri" class="foto-profil">
-    <h1>Khalindra Maulita Syafitri</h1>
-    <p>Mahasiswi Sistem Informasi Universitas Tanjungpura</p>
-  </header>
+<header>
+    <h1>Warna Acak</h1>
+    <p>NIM: H1101251070 | Nama: Khalindra Maulita Syafitri</p>
+</header>
 
-  <nav class="nav">
-    <a href="#tentang">Tentang</a>
-    <a href="#hobi">Hobi</a>
-    <a href="#jadwal">Jadwal</a>
-    <a href="#kontak">Kontak</a>
-  </nav>
+<main>
+<section>
 
-  <main class="konten">
-    <section id="tentang">
-      <h2>Tentang Saya</h2>
-      <p>Halo! Saya Khalindra, mahasiswa yang sedang belajar membuat web dengan HTML dan CSS. Saya sangat suka traveling, tetapi saya tidak suka pergi sendirian.Warna favorit saya navy,hitam,coklat,abu-abu. Makanan favorit saya Mie Ayam,Sate,Nasi Goreng.</p>
-      <p>Cita-cita saya ingin menjadi CEO.</p>
-    </section>
+    <div id="warna_nim"></div>
 
-    <section id="hobi">
-      <h2>Daftar Hobi</h2>
-      <ul class="list-hobi">
-        <li>Traveling kemanapun</li>
-        <li>Belanja</li>
-        <li>Main Volly & Badminton</li>
-        <li>Mendengarkan musik kalo kesepian</li>
-      </ul>
-    </section>
+    <h2 id="kode_nim">#FFFFFF</h2>
 
-<section id="jadwal">
-      <h2>Jadwal Pelajaran</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Hari</th>
-            <th>Mata Pelajaran</th>
-            <th>Jam</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td rowspan="3">Senin</td>
-            <td>Pemrograman Web Dasar</td>
-            <td>08.20 – 10.00</td>
-          </tr>
-          <tr>
-            <td>Basis Data</td>
-            <td>10.20 – 12.50</td>
-          </tr>
-          <tr>
-            <td>Kewarganegaraan</td>
-            <td>13.30 – 15.10</td>
-          </tr>
-          <tr>
-            <td rowspan="2">Selasa</td>
-            <td>Praktikum Pemrograman Web Dasar</td>
-            <td>10.20 – 13.10</td>
-          </tr>
-          <tr>
-            <td>Manajemen Proyek SI</td>
-            <td>13.30 – 15.10</td>
-          <tr>
-            <td rowspan="2">Rabu</td>
-            <td>Aplikasi Multimedia</td>
-            <td>07.30 – 10.00</td>
-          </tr>
-          <tr>
-            <td>Rekayasa Perangkat Lunak</td>
-            <td>10.20 – 12.50</td>
-          </tr>
-          <tr>
-            <td rowspan="2">Kamis</td>
-            <td>Pemrograman Berorientasi Objek</td>
-            <td>10.20 – 12.00</td>
-          </tr>
-          <tr>
-            <td>Kewirausahaan Teknologi Informasi</td>
-            <td>13.30 – 15.10</td>
-          </tr>
-          <tr>
-            <td rowspan="2">Jumat</td>
-            <td>Manajemen Rantai Pasok</td>
-            <td>07.30 – 10.00</td>
-          </tr>
-          <tr>
-            <td>Praktikum Pemrograman Berorientasi Objek</td>
-            <td>13.30 – 16.20</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+    <button onclick="warnaAcak_nim()">
+        Warna Baru
+    </button>
 
-    <section id="kontak">
-      <h2>Formulir Kontak</h2>
-      <form>
-        <label for="nama">Nama</label>
-        <input type="text" id="nama" placeholder="Tulis nama Anda">
+    <button onclick="salin_nim()">
+        Copy
+    </button>
 
-        <label for="email">Email</label>
-        <input type="email" id="email" placeholder="nama@email.com">
+    <h3>Riwayat Warna</h3>
+    <p id="riwayat_nim"></p>
 
-        <label for="pesan">Pesan</label>
-        <textarea id="pesan" rows="4" placeholder="Tulis pesan..."></textarea>
+</section>
+</main>
 
-        <button type="submit">Kirim Pesan</button>
-      </form>
-    </section>
-  </main>
+<script>
 
-  <footer class="footer">
-    <p>&copy; 2026 Khalindra Maulita Syafitri. Dibuat dengan HTML &amp; CSS.</p>
-  </footer>
+let riwayat_nim = [];
 
+function warnaAcak_nim() {
+
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    let warna = "rgb(" + r + "," + g + "," + b + ")";
+    document.getElementById("warna_nim").style.background = warna;
+    document.getElementById("kode_nim").innerText = warna;
+    riwayat_nim.unshift(warna);
+
+    if (riwayat_nim.length > 5) {
+        riwayat_nim.pop();
+    }
+    document.getElementById("riwayat_nim").innerText =
+        riwayat_nim.join(" | ");
+}
+
+function salin_nim() {
+    let warna =
+        document.getElementById("kode_nim").innerText;
+    navigator.clipboard.writeText(warna);
+    alert("Warna berhasil disalin!");
+}
+</script>
 </body>
 </html>
