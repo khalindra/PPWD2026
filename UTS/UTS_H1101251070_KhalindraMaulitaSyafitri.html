@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Warna Acak</title>
+    <style>
+        body {
+            font-family: Times New Roman;
+            text-align: center;
+        }
+
+        #warna_nim {
+            width: 250px;
+            height: 150px;
+            margin: 20px auto;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Warna Acak</h1>
+    <p>NIM: H1101251070 | Nama: Khalindra Maulita Syafitri</p>
+</header>
+
+<main>
+<section>
+
+    <div id="warna_nim"></div>
+
+    <h2 id="kode_nim">#FFFFFF</h2>
+
+    <button onclick="warnaAcak_nim()">
+        Warna Baru
+    </button>
+
+    <button onclick="salin_nim()">
+        Copy
+    </button>
+
+    <h3>Riwayat Warna</h3>
+    <p id="riwayat_nim"></p>
+
+</section>
+</main>
+
+<script>
+
+let riwayat_nim = [];
+
+function warnaAcak_nim() {
+
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    let warna = "rgb(" + r + "," + g + "," + b + ")";
+    document.getElementById("warna_nim").style.background = warna;
+    document.getElementById("kode_nim").innerText = warna;
+    riwayat_nim.unshift(warna);
+
+    if (riwayat_nim.length > 5) {
+        riwayat_nim.pop();
+    }
+    document.getElementById("riwayat_nim").innerText =
+        riwayat_nim.join(" | ");
+}
+
+function salin_nim() {
+    let warna =
+        document.getElementById("kode_nim").innerText;
+    navigator.clipboard.writeText(warna);
+    alert("Warna berhasil disalin!");
+}
+</script>
+</body>
+</html>
